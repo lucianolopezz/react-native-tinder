@@ -18,5 +18,6 @@ export const Card = styled.View`
 
 export const ImagePerfil = styled.Image`
   width: ${width - 20};
+  height: 100%;
   border-radius: 10px;
 `;

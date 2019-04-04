@@ -1,21 +1,26 @@
 import React from 'react';
 
-import { TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import { Container } from './styles';
+import { Container, BtnCircle } from './styles';
 
 const Footer = () => (
   <Container>
-    <TouchableOpacity>
-      <Icon name='user-circle' size={30} color='#CCC' />
-    </TouchableOpacity>
-    <TouchableOpacity>
-      
-    </TouchableOpacity>
-    <TouchableOpacity>
-      <Icon name='comment-o' size={30} color='#CCC' />
-    </TouchableOpacity>
+    <BtnCircle>
+      <Icon name='rotate-left' size={20} color='#e8d76a' />
+    </BtnCircle>
+    <BtnCircle style={{ width: 50, height: 50 }}>
+      <Icon name='close' size={24} color='#FF5864' />
+    </BtnCircle>
+    <BtnCircle>
+      <Icon name='star' size={20} color='#327bef' />
+    </BtnCircle>
+    <BtnCircle style={{ width: 50, height: 50 }}>
+      <Icon name='heart' size={24} color='#3aaf84' />
+    </BtnCircle>
+    <BtnCircle>
+      <Icon name='flash' size={20} color='#7928af' />
+    </BtnCircle>
   </Container>
 );
 
