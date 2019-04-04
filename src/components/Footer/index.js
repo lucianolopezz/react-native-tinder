@@ -3,15 +3,15 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import { Container, Logo } from './styles';
+import { Container } from './styles';
 
-const Header = () => (
+const Footer = () => (
   <Container>
     <TouchableOpacity>
       <Icon name='user-circle' size={30} color='#CCC' />
     </TouchableOpacity>
     <TouchableOpacity>
-      <Logo source={require('../../img/tinder-logo.png')} />
+      
     </TouchableOpacity>
     <TouchableOpacity>
       <Icon name='comment-o' size={30} color='#CCC' />
@@ -19,4 +19,4 @@ const Header = () => (
   </Container>
 );
 
-export default Header;
+export default Footer;

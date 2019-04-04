@@ -1,27 +1,22 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { Dimensions } from 'react-native';
+import styled from 'styled-components';
 
 const { width } = Dimensions.get('window');
 
-const styles = StyleSheet.create({
-  container: {
-    //flex: 1,
-    padding: 10,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F3F3F3',
-  },
-  card: {
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.6,
-    shadowRadius: 5,
-    elevation: 1,
-  },
-  imgCard: {
-    width: width - 20,
-    borderRadius: 10,
-  },
-});
+export const Container = styled.View`
+  flex: 1;
+  padding: 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #F3F3F3;
+`;
 
-export default styles;
+export const Card = styled.View`
+  box-shadow: 2px 2px 5px black;
+`;
+
+export const ImagePerfil = styled.Image`
+  width: ${width - 20};
+  border-radius: 10px;
+`;
