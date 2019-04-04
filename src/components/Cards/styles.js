@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const { width } = Dimensions.get('window');
 
 export const Container = styled.View`
+  z-index: 9999;
   flex: 1;
   padding: 10px;
   flex-direction: row;
