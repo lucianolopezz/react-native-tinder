@@ -4,6 +4,7 @@ import { PanResponder, Animated, Dimensions, LayoutAnimation, UIManager } from '
 import { Container, Card, ContainerNoMoreCards, TextInfo, ImagePerfil, PhotoUser, Like, Nope, BoxFooter, Name, Description } from './styles';
 
 const AnimatedCard = Animated.createAnimatedComponent(Card);
+const AnimatedLike = Animated.createAnimatedComponent(Like);
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -16,6 +17,7 @@ export default class Cards extends Component {
 
     this.state = {
       pan: new Animated.ValueXY(),
+      fadeOpacity: new Animated.Value(0),
       indexCard: 0,
       cards: [
         {id: 1, nome: 'Jessica da Silva', idade: 19, escolaridade: 'Uniderp', profissao: 'Modelo em Agency', distancia: 136, descricao: '', url_foto: 'https://statig2.akamaized.net/bancodeimagens/5d/ce/v6/5dcev68zm7ztp5zfche19xur5.jpg',},
@@ -110,7 +112,7 @@ export default class Cards extends Component {
 }
 
   renderCards = () => {
-    const { cards, indexCard } = this.state;
+    const { cards, indexCard, fadeOpacity } = this.state;
 
     if(indexCard >= cards.length) {
       return this.renderNoMoreCards();
@@ -126,6 +128,7 @@ export default class Cards extends Component {
                 {...this.panResponder.panHandlers}
                 style={this.getCardStyle()}
               >
+                <AnimatedLike source={require('../../img/like.png')} fadeOpacity={fadeOpacity} />
                 <ImagePerfil source={{ uri: card.url_foto }} />
                 <BoxFooter>
                   <Name>{card.nome}, {card.idade}</Name>

@@ -45,7 +45,7 @@ export const Like = styled.Image`
   width: 95px;
   height: 95px;
   z-index: 999999;
-  opacity: 0px;
+  opacity: ${props => props.fadeOpacity}px;
 `;
 
 export const Nope = styled.Image`
